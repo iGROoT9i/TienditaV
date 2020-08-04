@@ -31,38 +31,12 @@
     <link href="css/responsive.css" type="text/css" rel="stylesheet">
     <title>SIDShop</title>
 
-    <link rel="stylesheet" href="css/stylesico.css" type="text/css"><!-- Insert Comment Here -->
+    <link rel="stylesheet" href="css/stylesico.css" type="text/css">
+    <!-- Insert Comment Here -->
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106310707-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-        gtag('config', 'UA-106310707-1', {
-            'anonymize_ip': true
-        });
-
-    </script>
-
-    <!-- Start of StatCounter Code -->
-    <script>
-        <!--
-        var sc_project = 11921154;
-        var sc_security = "6c07f98b";
-        var scJsHost = (("https:" == document.location.protocol) ?
-            "https://secure." : "http://www.");
-        //
-
-        -->
-        document.write("
-
-    <sc"+"ript src='" +scJsHost +"statcounter.com/counter/counter.js'>
-        </"+"script>");
-    </script>
     <!-- End of StatCounter Code -->
 
 </head>
@@ -83,49 +57,57 @@
                 <div class="row">
                     <div class="col-md-6">
                         <ul class="header_list text-md-left text-center">
-                            <li><a href="tel:+ 00 123 456 789"><i class="fa fa-phone"></i>+ 00 123 456 789</a></li>
+                            <li><a name="llevar" href="tel:+ 00 123 456 789"><i class="fa fa-phone"></i>+ 00 123 456 789</a></li>
                             <li><a href="mailto:info@gmail.com"><i class="fa fa-envelope-o"></i>info@gmail.com</a></li>
                         </ul>
                     </div>
                     <div class="col-md-6">
                         <ul class="header_list text-md-right text-center">
-                            <li><a href="#test-popup1" class="open-popup-link">Login</a>
+                            <li id="btnlogin"><a href="#test-popup1" class="open-popup-link">Iniciar Sesión</a>
                                 <div id="test-popup1" class="white-popup lr-popup mfp-hide text-center">
-                                    <h4>Login</h4>
-                                    <form class="subscribe-popup-form" method="post" action="#">
-                                        <input name="email" required type="email" placeholder="Enter Your Email">
-                                        <input name="password" required type="password" placeholder="Enter Your Password">
-                                        <div class="form-check text-left">
-                                            <label>Remember me
+                                    <h4>Iniciar Sesión</h4>
+                                    <form class="subscribe-popup-form">
+                                        <input id="CorreoL" name="email" required type="email" placeholder="Introduce tu correo electronico">
+                                        <input id="ContraseñaL" name="password" required type="password" placeholder="Ingresa tu contraseña">
+                                        <div class="form-check  text-center">
+                                            <a href="#" class="forgot-password text-center">Olvidaste tu contraseña?</a>
+                                            <label>
                                                 <input class="defult-check" type="checkbox" checked="checked">
-                                                <span class="checkmark"></span>
+                                                
                                             </label>
-                                            <a href="#" class="forgot-password float-right">Forgot Password ?</a>
+
                                         </div>
-                                        <button class="btn btn-primary" title="Login" type="button">Login</button>
+
+                                        <button class="btn btn-primary" title="Login" type="button" onclick="logeo_usuario()">Iniciar Sesión</button>
+
+
                                     </form>
-                                    <h6>Don't have an account?</h6>
-                                    <a href="#test-popup2" class="sign-up open-popup-link">Click here to Sign up</a>
+                                    <h6>No tienes una Cuenta?</h6>
+                                    <a href="#test-popup2" class="sign-up open-popup-link">Click aqui para Registrarte</a>
                                 </div>
-                                <div id="test-popup2" class="white-popup lr-popup mfp-hide">
-                                    <h4>Registration</h4>
-                                    <form class="subscribe-popup-form" method="post" action="#">
-                                        <input name="input" required type="input" placeholder="Enter Your name">
-                                        <input name="email" required type="email" placeholder="Enter Your Email">
-                                        <input name="password" required type="password" placeholder="Enter Your Password">
-                                        <input name="password" required type="password" placeholder="Confirmation Password">
+                                <div id="test-popup2" class="white-popup lr-popup mfp-hide padd text-center">
+                                    <h4>Registrate</h4>
+                                    <form class="subscribe-popup-form">
+                                        <input id="RegNombre" required type="input" placeholder="Introduzca su usuario">
+                                        <input id="RegEmail" required type="email" placeholder="Introduce tu correo electronico">
+                                        <input id="RegPassword" required type="password" placeholder="Ingresa tu contraseña">
+                                        <input id="RegPasswordc" required type="password" placeholder="Contraseña de confirmación">
                                         <div class="form-check">
-                                            <label>I accept the terms and conditions
-                                                <input class="defult-check" type="checkbox" checked="checked">
+                                            <label>Acepto los terminos y condiciones
+                                                <input id="RegTerminos" class="defult-check" type="checkbox" checked="checked" required>
                                                 <span class="checkmark"></span>
                                             </label>
                                         </div>
-                                        <button class="btn btn-primary" title="Subscribe" type="button">Register</button>
+                                        <button id="btn-reigss" class="btn btn-primary" title="Subscribe" type="submit" onclick="registro_usuarios()">Registrarse</button>
                                     </form>
+                                    <h6>Tienes una Cuenta?</h6>
+                                    <a href="#test-popup1" class="sign-up open-popup-link">Iniciar Sesión</a>
                                 </div>
                             </li>
-                            <li><a href="#">Wishlist</a></li>
-                            <li><a href="my-account.html">My Account</a></li>
+                            <!--   //////////////////////////////////opciones superiores             -->
+                            <li><a href="#">Lista de Deseos</a></li>
+                            <li id="btnuser"><a href="my-account.html">Mi cuenta</a></li>
+                            <li id="btncerrar"><a href="index.html" onclick="logout_user()">Cerrar Sesion</a></li>
                         </ul>
                     </div>
                 </div>
@@ -145,42 +127,25 @@
                             </form>
                             <div class="header-right">
                                 <div class="header-cart">
-                                    <a href="#">
-                                        <div class="cart-icon">
-                                            <img src="image/cart-icon.png" alt="cart-icon">
-                                            <span>02</span>
-                                        </div>
-                                        $237.00<i class="fa fa-angle-down"></i>
+                                    <a href="#" id="totales">
+
+                                        <!-- Imprime total y header de carrito -->
+
                                     </a>
                                     <div class="cart-box">
-                                        <div class="cart-info">
-                                            <div class="cart-prodect d-flex">
-                                                <div class="cart-img">
-                                                    <img src="image/cart-img-1.png" alt="cart-img">
-                                                </div>
-                                                <div class="cart-product">
-                                                    <a href="#">Ornare sed consequat</a>
-                                                    <p>$ 81.00</p>
-                                                </div>
-                                                <a href="#" class="close-icon d-flex align-items-center"><i class="icon-close"></i></a>
-                                            </div>
-                                            <div class="cart-prodect d-flex">
-                                                <div class="cart-img">
-                                                    <img src="image/cart-img-2.png" alt="cart-img">
-                                                </div>
-                                                <div class="cart-product">
-                                                    <a href="#">Pellentesque posuere</a>
-                                                    <p>$ 80.00</p>
-                                                </div>
-                                                <a href="#" class="close-icon d-flex align-items-center"><i class="icon-close"></i></a>
-                                            </div>
+                                        <div class="cart-info" id="listCarrito">
+
+                                            <!--Imprimen productos de carrito -->
+
+
                                         </div>
-                                        <div class="price-prodect d-flex align-items-center justify-content-between">
-                                            <p class="total">total</p>
-                                            <p class="total-price">$ 161.00</p>
+                                        <div class="price-prodect d-flex align-items-center justify-content-between" id="totales2">
+
+                                            <!-- Imprime total y footer de carrito -->
+
                                         </div>
                                         <div class="cart-btn">
-                                            <a href="cart.html" class="btn btn-primary">View Cart</a>
+                                            <a href="checkout.html" class="btn btn-primary">Ver Carrito</a>
                                         </div>
                                     </div>
                                 </div>
@@ -206,12 +171,13 @@
                             </div>
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="navbar-nav">
-                                    <li class="nav-item ">
-                                        <a class="nav-link" href="#llevar">Inicio</a>
+
+                                    <li class="nav-item dropdown ">
+                                        <a class="nav-link" href="index.html">Inicio</a>
 
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="about-us.html">About us</a>
+                                        <a class="nav-link" href="about-us.html">Sobre Nosotros</a>
                                     </li>
 
                                     <li class="nav-item">
@@ -219,8 +185,8 @@
 
                                     </li>
 
-                                    <li class="nav-item dropdown active">
-                                        <a class="nav-link" href="contact.html">Contact</a>
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="contact.html">Contacto</a>
                                     </li>
                                 </ul>
                             </div>
@@ -233,7 +199,7 @@
     <!-- End Header Section -->
 
     <!-- Start Breadcrumbs Section -->
-    <section class="breadcrumbs-section background_bg" data-img-src="image/contact-breadcrumbs-img.jpg">
+    <section class="breadcrumbs-section background_bg" data-img-src="image/blog_img2.jpg">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-12">
@@ -257,31 +223,31 @@
                 <div class="col-lg-8 col-md-12">
                     <div class="contact-inputs">
                         <div class="title text-left">
-                            <h4>Leave a Message</h4>
+                            <h4>DEJA UN MENSAJE</h4>
                         </div>
                         <form method="post" name="enq" class="contact-form form-with-label">
                             <div class="input-1">
-                                <label>Your Name<span>*</span></label>
+                                <label>TU NOMBRE<span>*</span></label>
                                 <input required="" class="form-control" id="first-name" placeholder="Enter Your Name" value="" type="text">
                             </div>
                             <div class="input-2">
-                                <label>Your Email<span>*</span></label>
+                                <label>TU CORREO ELECTRÓNICO<span>*</span></label>
                                 <input required="" class="form-control" id="email" placeholder="Enter Your Email" value="" type="email">
                             </div>
                             <div class="input-3">
-                                <label>Your Phone<span>*</span></label>
+                                <label>SU TELÉFONO<span>*</span></label>
                                 <input required="" class="form-control" id="phone" placeholder="Enter Your Phone" value="" type="text">
                             </div>
                             <div class="input-4">
-                                <label>subject<span>*</span></label>
+                                <label>TEMA<span>*</span></label>
                                 <input required="" class="form-control" id="subject" placeholder="Enter Your Subject" value="" type="text">
                             </div>
                             <div class="input-5">
-                                <label>Message<span>*</span></label>
+                                <label>MENSAJE<span>*</span></label>
                                 <textarea required="" rows="3" class="form-control" id="description" placeholder="Your Message"></textarea>
                             </div>
                             <div class="submit-btn">
-                                <button type="submit" id="submitButton" class="btn btn-primary">submit</button>
+                                <button type="submit" id="submitButton" class="btn btn-primary">Enviar</button>
                             </div>
                             <div class="col-md-12">
                                 <div id="alert-msg" class="alert-msg text-center"></div>
@@ -332,27 +298,31 @@
                 <div class="row">
                     <div class="col-lg-4 col-md-12 col-sm-12">
                         <div class="footer-box box-1">
-                            <h6 class="fb-title">ABOUT US</h6>
+                            <h6 class="fb-title">SOBRE NOSOTROS</h6>
                             <div class="fb-iner">
-                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+                                <p>Hay muchas variaciones de pasajes de Lorem Ipsum disponibles, pero la mayoría ha sufrido alteración de alguna forma, por humor inyectado o palabras aleatorias que ni siquiera parecen un poco creíbles.</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 col-sm-12 order-md-last">
                         <div class="footer-box box-4">
-                            <h6 class="fb-title">CONTACT INFO</h6>
+                            <h6 class="fb-title">DATOS DE CONTACTO</h6>
                             <div class="fb-iner">
                                 <ul>
-                                    <li><i style="color: darkslategray" class="icon-map-marker"></i><p>c/o Giunti International Division Via G.B. Pirelli, 30 20124 Milan</p></li>
-                                <li><i style="color: darkslategrey" class="icon-phone"></i><p>+025 2155 3255</p></li>
-                                <li><i style="color: darkslategrey" class="icon-envelope-o"></i><a href="#">info@gmail.com</a></li>
+                                    <li><i style="color: darkslategray" class="icon-map-marker"></i>
+                                        <p>c/o Giunti International Division Via G.B. Pirelli, 30 20124 Milan</p>
+                                    </li>
+                                    <li><i style="color: darkslategrey" class="icon-phone"></i>
+                                        <p>+025 2155 3255</p>
+                                    </li>
+                                    <li><i style="color: darkslategrey" class="icon-envelope-o"></i><a href="#">info@gmail.com</a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-2 col-md-3 col-6">
                         <div class="footer-box box-2">
-                            <h6 class="fb-title">CATEGORIES</h6>
+                            <h6 class="fb-title">CATEGORIAS</h6>
                             <div class="fb-iner">
                                 <ul class="footer-links">
                                     <li><a href="#">Fashion Sneakers</a></li>
@@ -368,14 +338,13 @@
                     </div>
                     <div class="col-lg-2 col-md-3 col-6">
                         <div class="footer-box box-3">
-                            <h6 class="fb-title">MY ACCOUNT</h6>
+                            <h6 class="fb-title">MI CUENTA</h6>
                             <div class="fb-iner">
                                 <ul class="footer-links">
-                                    <li><a href="#">Orders</a></li>
-                                    <li><a href="#">Compare</a></li>
-                                    <li><a href="#">Wishlist</a></li>
-                                    <li><a href="#">Log In</a></li>
-                                    <li><a href="#">Register</a></li>
+                                    <li><a href="#">Pedidos</a></li>
+                                    <li><a href="#">Lista de deseos</a></li>
+                                    <li><a href="#">Iniciar sesión</a></li>
+                                    <li><a href="#">Registrarse</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -388,7 +357,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="copyright">
-                            <p>Copyright © 2018. All Rights Reserved.</p>
+                            <p>Copyright © 2020. Todos los derechos reservados.</p>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -408,46 +377,10 @@
     </footer>
     <!-- End Footer Section -->
 
-    <!-- Home Popup Section -->
-    <div class="modal fade bd-example-modal-lg main-popup" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-body p-0">
-                    <div class="newsletter-pop-up d-flex">
-                        <div class="popup-img">
-                            <img src="image/1_popup-img.jpg" alt="popup-img">
-                        </div>
-                        <div class="popup-form text-center">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true"><i class="icon-close"></i></span>
-                            </button>
-                            <div class="popup-logo">
-                                <img src="image/logo1.png" alt="logo">
-                            </div>
-                            <div class="popup-text">
-                                <p>Join us Now</p>
-                                <h6>And get hot news about the theme</h6>
-                            </div>
-                            <form class="subscribe-popup-form" method="post" action="#">
-                                <input name="email" required type="email" placeholder="Enter Your Email">
-                                <button class="btn btn-primary" title="Subscribe" type="submit">Subscribe</button>
-                            </form>
-                            <div class="form-check">
-                                <label>Don't show this popup again!
-                                    <input class="defult-check" type="checkbox" checked="checked">
-                                    <span class="checkmark"></span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Screen Load Popup Section -->
 
-<!-- Boton UP -->
-<a href="#" class="scrollup" style="display: none;"><i class="icon-chevron-up-1"></i></a>
+
+    <!-- Boton UP -->
+    <a href="#" class="scrollup" style="display: none;"><i class="icon-chevron-up-1"></i></a>
 
     <!-- Jquery js -->
     <script src="js/jquery.min.js" type="text/javascript"></script>
@@ -483,6 +416,8 @@
     <script src="js/mCustomScrollbar.concat.min.js" type="text/javascript"></script>
     <!-- Custom css -->
     <script src="js/custom.js" type="text/javascript"></script>
+    <Script src="js/registro_usuario.js"></Script>
+    <script src="js/carrito.js" type="text/javascript"></script>
 </body>
 
 </html>
